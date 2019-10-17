@@ -1,0 +1,15 @@
+diff a/application/library/Import/Helper.php b/application/library/Import/Helper.php	(rejected hunks)
+@@ -49,6 +49,13 @@
+     return $result;
+ }
+ 
++/**
++ * Function: 格式化布尔值 1：返回是 0：返回否
++ */
++function formatBoolean($val) {
++    return intval($val)? '<span class="u-badge u-badge-success">是</span>' : '<span class="u-badge u-badge-inverse">否</span>';
++}
++
+ /**
+  * Function: 生成静态文件版本号
+  */

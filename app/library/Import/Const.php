@@ -1,0 +1,156 @@
+<?php
+
+const AQQW_QINIU_BUCKET = "{aqqw_qiniu_bucket}";
+const AQQW_QINIU_BUCKET_REAL = "http://image.aiqingqingwa.com/";
+
+//Apis
+//http header
+const STATUSCONTINUE = 100;
+const STATUSSWITCHINGPROTOCOLS = 101;
+const STATUSPROCESSING = 102;
+const STATUSOK = 200;
+const STATUSCREATED = 201;
+const STATUSACCEPTED = 202;
+const STATUSNONAUTHORITATIVEINFO = 203;
+const STATUSNOCONTENT = 204;
+const STATUSRESETCONTENT = 205;
+const STATUSPARTIALCONTENT = 206;
+const STATUSMULTISTATUS = 207;
+const STATUSALREADYREPORTED = 208;
+const STATUSIMUSED = 226;
+const STATUSMULTIPLECHOICES = 300;
+const STATUSMOVEDPERMANENTLY = 301;
+const STATUSFOUND = 302;
+const STATUSSEEOTHER = 303;
+const STATUSNOTMODIFIED = 304;
+const STATUSUSEPROXY = 305;
+const STATUSTEMPORARYREDIRECT = 307;
+const STATUSPERMANENTREDIRECT = 308;
+const STATUSBADREQUEST = 400;
+const STATUSUNAUTHORIZED = 401;
+const STATUSPAYMENTREQUIRED = 402;
+const STATUSFORBIDDEN = 403;
+const STATUSNOTFOUND = 404;
+const STATUSMETHODNOTALLOWED = 405;
+const STATUSNOTACCEPTABLE = 406;
+const STATUSPROXYAUTHREQUIRED = 407;
+const STATUSREQUESTTIMEOUT = 408;
+const STATUSCONFLICT = 409;
+const STATUSGONE = 410;
+const STATUSLENGTHREQUIRED = 411;
+const STATUSPRECONDITIONFAILED = 412;
+const STATUSREQUESTENTITYTOOLARGE = 413;
+const STATUSREQUESTURITOOLONG = 414;
+const STATUSUNSUPPORTEDMEDIATYPE = 415;
+const STATUSREQUESTEDRANGENOTSATISFIABLE = 416;
+const STATUSEXPECTATIONFAILED = 417;
+const STATUSTEAPOT = 418;
+const STATUSUNPROCESSABLEENTITY = 422;
+const STATUSLOCKED = 423;
+const STATUSFAILEDDEPENDENCY = 424;
+const STATUSUPGRADEREQUIRED = 426;
+const STATUSPRECONDITIONREQUIRED = 428;
+const STATUSTOOMANYREQUESTS = 429;
+const STATUSREQUESTHEADERFIELDSTOOLARGE = 431;
+const STATUSUNAVAILABLEFORLEGALREASONS = 451;
+const STATUSINTERNALSERVERERROR = 500;
+const STATUSNOTIMPLEMENTED = 501;
+const STATUSBADGATEWAY = 502;
+const STATUSSERVICEUNAVAILABLE = 503;
+const STATUSGATEWAYTIMEOUT = 504;
+const STATUSHTTPVERSIONNOTSUPPORTED = 505;
+const STATUSVARIANTALSONEGOTIATES = 506;
+const STATUSINSUFFICIENTSTORAGE = 507;
+const STATUSLOOPDETECTED = 508;
+const STATUSNOTEXTENDED = 510;
+const STATUSNETWORKAUTHENTICATIONREQUIRED = 511;
+
+//config files path
+const CONFIG_PATH = APPLICATION_PATH . '/application/library/Config/';
+
+//token expire seconds
+const APIS_TOKEN_EXPIRE = 86400;
+
+//token refresh available
+const APIS_TOKEN_REFRESH_AVAILABLE = 100000;
+
+//apis code
+const API_NO_SUCCESS = StatusOK;
+const API_MSG_SUCCESS = "OK";
+
+const API_NO_FAILED = StatusServiceUnavailable;
+const API_MSG_FAILED = "Something went wrong";
+
+const API_NO_INVALID_TOKEN = StatusTeapot;
+const API_MSG_INVALID_TOKEN = "无效的Token";
+
+const API_NO_EXPIRED_TOKEN = StatusBadRequest;
+const API_MSG_EXPIRED_TOKEN = "Token已过期";
+
+const API_NO_EXPIRED_SESSION = StatusUnauthorized;
+const API_MSG_EXPIRED_SESSION = "会话已过期";
+
+const API_NO_INTERFACE_ERROR = StatusInternalServerError;
+const API_MSG_INTERFACE_ERROR = "服务器内部错误";
+
+const API_NO_CAPTCHA_NOT_MATCH = 1001;
+const API_MSG_CAPTCHA_NOT_MATCH = "图形验证码不符";
+
+const API_NO_PARAMETER_MISSING = 1002;
+const API_MSG_PARAMETER_MISSING = "请求必需参数缺失";
+
+const API_NO_REQUEST_METHOD_NOT_ALLOWED = 1003;
+const API_MSG_REQUEST_METHOD_NOT_ALLOWED = "请求方式不合法";
+
+//PDO
+const LOCAL_PREFIX = "aqqw_crm_";
+const CSM_PREFIX = "z_csm_";
+const GMPS_PREFIX = "gmps_";
+const ANGEL_PREFIX = "charming_angel_";
+
+//view
+const CSS_PATH = "/static/css/";
+const JS_PATH = "/static/js/";
+const IMG_PATH = "/static/images/";
+const COMMON_PATH = APPLICATION_PATH . "/public/resources/common/";
+const STATIC_VERSION = "2019x49";
+const LIST_ITEMS_PER_PAGE = 15;
+
+//default avatar
+const DEFAULT_AVATAR_FEMALE = '/images/female.png?v=201810282053';
+const DEFAULT_AVATAR_MALE = '/images/male.png?v=201810282053';
+
+//upload
+const UPLOAD_PATH = "/storage/uploads/";
+
+//
+const PAGES_DOMAIN = "http://pages.aiqingqingwa.com";
+
+const PAGE_ACCESS_FORBIDDEN = '您没有权限访问该页面';
+
+//全局内嵌提示页
+const VIEW_PAGE_FORBIDDEN = "common/forbidden.html";
+const VIEW_PAGE_NOT_FOUND = "common/not_found.html";
+const VIEW_PAGE_WARNING = "common/warning.html";
+
+//七牛
+const QINIU_ACCESSKEY = "sevjZHdCTKwjzoA32prSUq6fRMc38RNlB8MpLCJc";
+const QINIU_CALLBACK_SECRET_KEY = "wQUscIAQTAdoL8ltiUYarUv7MqgXa_1ts6HNIoBQHnyV1kVe(NG62f8lcKryn9Ye3jOS5AXLVaJebJvnd";
+
+//我主良缘业务系统会员照片路径
+const WZLY_CRM_MEMBER_PHOTO_URL = 'http://ddzggdhjstlsljpp.7799520.com/upload/Avatar/Origin/';
+
+//QA
+const QA_SITE_URL = 'https://qa.crm.7799520.com/';
+const QA_BASE_URL = 'https://qa.crm.7799520.com/?token=%s';
+
+//服务系统管理组
+const CSM_MANAGER = [1, 5, 6];
+
+//服务特殊需要全国权限
+const CSM_NEED_All_AREA = [200000008584];
+
+//我主良缘特殊处理
+const WZLY_SPECIAL_PEOPLE = [
+	200000000048,//马雪菲
+];
