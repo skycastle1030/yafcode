@@ -1,5 +1,6 @@
 <?php
-
+use Yaf\Application;
+use Yaf\Registry;
 class Thirdparty_Qiniu
 {
 
@@ -29,9 +30,9 @@ class Thirdparty_Qiniu
         $params = [];
         $params['scope'] = $scope;
         $params['deadline'] = $deadline;
-        $qiniuConfigs = Yaf_Registry::get("config")->third_party_app->qiniu;
-        $params["callbackUrl"] = $qiniuConfigs->callback_url;
-        $params["callbackBody"] = "secret_key=" . QINIU_CALLBACK_SECRET_KEY . "&key=$(key)&hash=$(etag)&env=" . $qiniuConfigs->env . "";
+        //$qiniuConfigs = Registry::get("config")->third_party_app->qiniu;
+        //$params["callbackUrl"] = $qiniuConfigs->callback_url;
+       // $params["callbackBody"] = "secret_key=" . QINIU_CALLBACK_SECRET_KEY . "&key=$(key)&hash=$(etag)&env=" . $qiniuConfigs->env . "";
         $b = json_encode($params);
         $result['success']=1;
         $result['message']='数据获取成功';
@@ -310,8 +311,8 @@ class Thirdparty_Qiniu
         $expired = intval($expired);
         $expired = $expired < 60 ? 60 : $expired;
         $e = getTS() + $expired;
-        $domain = Yaf_Registry::get("config")->third_party_app->qiniu->access_domain;
-        $_url = sprintf("%s/%s?e=%s&%s", $domain, $fileKey, $e, $params);
+        $domain = Registry::get("config")->third_party_app->qiniu->access_domain;
+        $_url   = sprintf("%s/%s?e=%s&%s", $domain, $fileKey, $e, $params);
         return sprintf("%s&token=%s", $_url, $this->sign($_url));
     }
 }

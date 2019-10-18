@@ -20,7 +20,7 @@ class Apis_WeixinApi {
         //errcode	number	错误码
         //errmsg	string	错误信息
 
-        if(!$getTokenInfo || empty($getTokenInfo) || $getTokenInfo['errcode']!=0){
+        if(!$getTokenInfo || empty($getTokenInfo) || (isset($getTokenInfo['errcode'])&&$getTokenInfo['errcode']!=0)){
             return false;
         }
 
@@ -120,7 +120,8 @@ class Apis_WeixinApi {
 //
 //    }
 
-    public function geturl($url,$vars){
+    public static function geturl($url,$vars){
+
         $headerArray =array("Content-type:application/json;","Accept:application/json");
         $ch = curl_init();
         curl_setopt($ch, CURLOPT_URL, $url);
@@ -204,7 +205,6 @@ class Apis_WeixinApi {
 
         $result = curl_exec($ch);
         curl_close($ch);
-        var_dump($result);exit;
 
         return json_decode($result,true);
     }

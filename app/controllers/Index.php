@@ -9,9 +9,10 @@ class IndexController extends Controller_Abstract
 {
 	public function indexAction()
 	{
-	    phpinfo();
+
         $arrConfig = Application::app()->getConfig();
         $yafConfigs = Registry::get("config");
+
 //        $pdo = PDO_Demo::getInstance();
 //        $ruleList = $pdo->insert('roles',['name'=>'rules','remark'=>'jaskdjfdfdfdsdfs','order'=>9,'status'=>3]);
   //      var_dump($ruleList);exit;
@@ -49,7 +50,8 @@ class IndexController extends Controller_Abstract
 ////        array_multisort($last_names,SORT_DESC,$data);
 //
 //        var_dump($last_names,$exchang);
-       var_dump(rand(1,10000));
+        $this->getView()->assign("content", "this is test");
+        $this->getView()->display('index');
 
         exit;
 
@@ -57,16 +59,17 @@ class IndexController extends Controller_Abstract
 	
 	public function testAction()
 	{
-        echo '1111Hello!world';
-        $redis = Redis_Redis::getInstance();
-        $queryRedisKey = 'redis_test';
-        $value = $redis->get($queryRedisKey);
-        if ($value === false || $value == '') {
-            $flag = $redis->set($queryRedisKey, 'this is first redis info', 600);
+//        $redis = Redis_Redis::getInstance();
+//        $queryRedisKey = 'redis_test';
+//        $value = $redis->get($queryRedisKey);
+//        if ($value === false || $value == '') {
+//            $flag = $redis->set($queryRedisKey, 'this is first redis info', 600);
+//
+//        }
 
-        }
-
-		Dispatcher::getInstance()->disableView();
+        $this->getView()->assign("content", "this is test");
+        $this->getView()->display('index');
+		//Dispatcher::getInstance()->disableView();
 
 
 	}
