@@ -30,6 +30,7 @@ class UserController extends Controller_Abstract
         rsort($arr);
         var_dump($arr);
         var_dump(array_slice($data,0,3));
+
        // var_dump($data,$data2,array_unique(array_merge_recursive($data,$data2)));
 
         exit;
